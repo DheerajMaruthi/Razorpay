@@ -1,0 +1,204 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block menu_header%}
+  <div class="navbar-items" id="navbarResponsive">
+    <ul class="navbar-nav nav-wrapper">
+      <li class="nav-item active" id="">
+        <a class="nav-link" href="../#initiative" >KIMS CSR Initiative
+              <span class="sr-only">(current)</span>
+            </a>
+      </li>
+      <li class="nav-item" id="abt">
+        <a class="nav-link" href="../#about">About Jaipur Foot</a>
+      </li>
+      <!-- <li class="nav-item" id="test">
+        <a class="nav-link" href="../#testimonails">Testimonials</a>
+      </li> -->
+      <li class="nav-item" id="gal">
+        <a class="nav-link" href="../#gallery">Gallery</a>
+      </li>
+      <li class="nav-item" id="">
+        <a class="nav-link" href="../#press1">Press Release</a>
+      </li>
+      <li class="nav-item" id="">
+        <a class="nav-link" href="../#contact1">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+  <div class="btns">
+      <a href="#" class="spread-btn desk-btn">Spread the Word</a>
+      <div class="soc-icons">
+          <a href="#"
+          onclick="window.open('https://twitter.com/intent/tweet?text=Life%20is%20good%20when%20you%20choose%20to%20make%20it%20better&url=https://www.csr.kimsglobal.com/register/','twitter','width=700,height=600')"><i class="far fa-twitter"></i></a>
+          <a href="#"
+          onclick="window.open('http://pinterest.com/pin/create/link/?url=https://www.csr.kimsglobal.com/register/','pinterest','width=700,height=600')"><i class="far fa-pinterest"></i></a>
+          <a href="#"
+            onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.csr.kimsglobal.com%2Fregister%2F&amp;src=sdkpreparse','facebook','width=600,height=400')"><i class="far fa-facebook-f"></i></a>
+      </div>
+      <a href="{% url 'registration:register' %}" class="donate-btn desk-btn" >Donate Now</a>
+  </div>
+{% endblock %}
+
+{% block menu_header_responsive %}
+<div class="mob-list">
+    <ul class="navbar-nav nav-wrapper">
+      <li class="nav-item active">
+        <a class="nav-link"  href="../#initiative" id="ini">KIMS CSR Initiative
+              <span class="sr-only">(current)</span>
+            </a>
+      </li>
+      <li class="nav-item" id="abt">
+        <a class="nav-link"  href="../#about">About Jaipur Foot</a>
+      </li>
+      <!-- <li class="nav-item" id="test">
+        <a class="nav-link"  href="../#testimonails">Testimonials</a>
+      </li> -->
+      <li class="nav-item" id="gal">
+        <a class="nav-link"  href="../#gallery">Gallery</a>
+      </li>
+      <li class="nav-item" id="press">
+        <a class="nav-link"  href="../#press1">Press Release</a>
+      </li>
+      <li class="nav-item" id="contact">
+        <a class="nav-link"  href="../#contact1">Contact Us</a>
+      </li>
+      <li class="nav-item mt-btn1">
+          <a href="#" class="spread-btn">Spread the world</a>
+          <div class="soc-icons">
+            <a href="#"
+            onclick="window.open('https://twitter.com/intent/tweet?text=Life%20is%20good%20when%20you%20choose%20to%20make%20it%20better&url=https://www.csr.kimsglobal.com/register/','twitter','width=700,height=600')"><i class="far fa-twitter"></i></a>
+            <a href="#"
+            onclick="window.open('http://pinterest.com/pin/create/link/?url=https://www.csr.kimsglobal.com/register/','pinterest','width=700,height=600')"><i class="far fa-pinterest"></i></a>
+            <a href="#"
+              onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.csr.kimsglobal.com%2Fregister%2F&amp;src=sdkpreparse','facebook','width=600,height=400')"><i class="far fa-facebook-f"></i></a>
+          </div>
+      </li>
+      <li class="nav-item mt-btn2">
+          <a href="{% url 'registration:register' %}" class="donate-btn" >Donate Now</a>
+      </li>
+    </ul>
+</div>
+{% endblock %}
+<div class="clear"></div>
+
+{% block content %}
+<div class="container-fluid register-page">
+  {% if messages %}
+  <ul class="messages">
+      {% for message in messages %}
+        <div class="alert alert-danger" role="alert">
+            {{ message }}
+        </div>
+      {% endfor %}
+  </ul>
+  {% endif %}
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-12 col-lg-7 col-12 col-sm-12 reg-forn">
+                <div class="inst mb-3">
+                    <p>Please share your personal <span>Email ID, Mobile Number, Address</span> and <span>PAN No</span>. So that we can send you the reciept certificate & share updates on our programmes with you.
+                    </p>
+                    <p>Donations made qualify for deduction under Section <span>80G(5)of the Income Tax Act</span>,1961 in the hands of the donors subject to the limits prescribed therein.</p>
+                </div>
+                <div class="form">
+                <h3 class="text-center mb-3"> Yes, I want to support the initiative</h3>
+                <form role="form" name="reg" method="post" id="register">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="col-md-4">
+                            {% render_field form.amount_option.2 %}
+                        </div>
+                        <div class="col-md-8  other-bar">
+                              {% render_field form.other_amount  class='form-control other-amount' placeholder='Please enter an amount greater than  ₹ 100' required='required' %}
+                              <span id="popover-radio" class="hide">Please provide phonenumber</span>
+                          </div>
+                          {{form.errors.other_amount}}
+                    </div>
+                    <div class="form-row">
+                    <div class="col-md-6 col-ms-6 col-12">
+                        {% render_field form.amount_option.0 %}
+                    </div>
+                    <div class="col-md-6 col-ms-6 col-12">
+                        {% render_field form.amount_option.1 %}
+                    </div>
+                    </div>
+                    {{form.errors.amount_option}}
+                    <div class="form-row ">
+                        <div class="col-md-4">
+                            <label for="name">Name*</label>
+                            <p id="p1"></p>
+                        </div>
+                        <div class="col-md-8">
+                            {% render_field form.name class='form-control' autocomplete='nope' %}
+                            <span id="popover-name" class="hide">Enter your name</span>
+                            <p class="name"></p>
+                        </div>
+                        {{form.errors.name}}
+                    </div>
+                     <div class="form-row">
+                        <div class="col-md-4">
+                            <label for="email">Email*</label>
+                            <p id="p3"></p>
+                        </div>
+                        <div class="col-md-8">
+                            {% render_field form.email type='text' class='form-control' autocomplete='nope'%}
+                            <span id="popover-email" class="hide">Enter email id</span>
+                            <p class="email"></p>
+                        </div>
+                        {{form.errors.email}}
+                        <p class="email-error"></p>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-4">
+                            <label for="phone">Phone*</label>
+                        </div>
+                        <div class="col-md-8">
+                            {% render_field form.phonenumber class='form-control' autocomplete='nope'%}
+                            <span id="popover-cnumber" class="hide">Please provide phonenumber</span>
+                            <p class="phone"></p>
+                        </div>
+                        {{form.errors.phonenumber}}
+                    </div>
+
+                     <div class="form-row">
+                        <div class="col-md-4">
+                            <label for="address">Address</label>
+                        </div>
+                        <div class="col-md-8">
+                          {% render_field form.address class='form-control'%}
+                          <p id="p2"></p>
+                        </div>
+                        {{form.errors.address}}
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-md-4">
+                            <label for="phone">PAN (Only for India)*</label>
+                        </div>
+                        <div class="col-md-8">
+                          {% render_field form.pan class='form-control'%}
+                        </div>
+                        {{form.errors.pan}}
+                    </div>
+
+                    <div class="form-row permit-box">
+                        <div class="col-md-2 col-2 col-sm-2">
+                       {%render_field form.agree class='form-control' id='permit' %}
+                       </div>
+                       {{form.errors.agree}}
+                       <div class="col-md-10 col-10 col-sm-10">
+                           <label for="permit">I give my consent for authorised representative of KIMS to update me on latest CSR initiatives</label>
+                        </div>
+                   </div>
+                   <button type="submit" name="button" class="frm-sub" >Donate</button>
+                </form>
+            </div>
+        </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="clear"></div>
+{% endblock %}
+{% block csrf %}
+{% endblock %}

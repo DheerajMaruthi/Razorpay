@@ -1,0 +1,220 @@
+{% extends "base.html" %}
+{% load static %}
+<!-- content sections starts from here  -->
+{% block content %}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+        <div id="bannerCarousel" class="carousel slide" >
+          <ol class="carousel-indicators">
+            {% for obj in banner_images %}
+              <li data-target="#bannerCarousel" data-slide-to="{{forloop.counter0}}" class="{% if forloop.counter0 == 0 %}active{% endif %}"></li>
+            {% endfor %}
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            {% for obj in banner_images %}
+                <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
+                    <div class="banner-img banner-desk" style="background-image: url('{{obj.desktop_img.url}}')"></div>
+                    <div class="banner-img banner-mob" style="background-image: url('{{obj.mobile_img.url}}')"></div>
+                      {{obj.banner_txt|safe}}
+                </div>
+            {% endfor %}
+            </div>
+          </div>
+        <div class="container-fluid">
+                <div class="row page-section initiative-section" id="initiative">
+                <div class="container">
+                    <div class="row intitiative-banner">
+                        <div class="col-md-12 col-12 col-sm-12 col-lg-7 initiative-content">
+                            <h6>KIMS CSR Initiative</h6>
+
+                            <h2>Life is good when you choose to make it better</h2>
+                            <p>Kerala Institute of Medical Sciences (KIMS) has launched a center in Trivandrum that offers prosthetic limbs to the needy free of cost as part of its CSR initiative. This project has been launched in partnership with Bhagwan Mahaveer Viklang Sahayata Samiti (BMVSS). The center which is known as the ‘KIMS-Jaipur Foot (BMVSS) Center’ was launched in January 2019 by D. R. Mehta, the founder of BMVSS.</p>
+                            <p>This is the first time that BMVSS has tied up with a private hospital in India. KIMS Healthcare Group chairman, Dr M I Sahadulla told media persons that many institutes have shown interest in joining this initiative.
+                            </p>
+                            <p>As of now, the center will be able to cater only five persons a day and prior appointments will have to be made to avail the services as the authorities are expecting a heavy rush. After firming up staff and facilities, we are the plan is to open more centers in Kerala, Tamil Nadu and even in Sri Lanka.</p>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-12 col-lg-5 initiative-img">
+                            <img src="{% static 'images/kims-ini.png'%}" class="img-fluid" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="row about-us" id="about" >
+                    <div class="col-md-12 col-12 col-sm-12 col-lg-6 m-0 p-0">
+                        <img src="{%static 'images/sec3-img.jpg'%}" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-md-12 col-12 col-lg-6 sec2-content">
+                        <div class="sec-content">
+                            <h6 class="h6-para">About Jaipur Foot</h6>
+                            <!-- <h2 class="h2-para">BMVSS is among the world’s largest organizations for the disabled and has helped over 1.73 million amputees in India as well as in many countries in Latin America, Africa, and Asia.</h2> -->
+                            <p class="p-para">BMVSS is among the world’s largest organizations for the disabled and has helped over 1.73 million amputees in India as well as in many countries in Latin America, Africa, and Asia.</p>
+                            <p class="p-para">Jaipur Foot offers different types of prosthetics made of high-quality material which are lightweight and flexible. The prosthetics are durable with high tensile strength and impact resistance and can be used with or without shoes. With the below-knee limb, an amputee can easily sit, run, squat, climb, walk and swim like a normal person.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+
+                <div class="row counter" id="counter">
+                    <div class="test-banner" style="background-image: url('/static/images/layer2.jpg');">
+                        <h2 class="text-center">We make it count</h2>
+                        <ul class="time-counter">
+                              <li> <span><img src="{% static 'images/timer1.png' %}"/></span>
+                                <h3 class="counter-up">456</h3>
+                                <label>Donations</label> </li>
+                              <li>  <span><img src="{% static 'images/timer2.png' %}"/></span>
+                                <h3 class="counter-up">4567</h3>
+                                <label>Donors</label> </li>
+                              <li> <span><img src="{% static 'images/timer3.png' %}"/></span>
+                                <h3 class="counter-up">65</h3>
+                                <label>Medical Camps</label> </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                </div>
+                <!-- <div class="row testimonails" id="testimonails">
+                    <div class="container">
+                        <h2 class="text-center">Testimonials</h2>
+                        <div class="row">
+                            <div id="owlTestimonials" class="owl-carousel owl-theme top-owl">
+                                <div class="item">
+                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremq laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, </p>
+                                        <h6>Vinay Kumar</h6>
+                                        <span>Mumbai</span>
+                                </div>
+                                <div class="item">
+                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremq laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, </p>
+                                        <h6>Vinay Kumar</h6>
+                                        <span>Mumbai</span>
+                                </div>
+                                <div class="item">
+                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremq laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, </p>
+                                        <h6>Vinay Kumar</h6>
+                                        <span>Mumbai</span>
+                                </div>
+                                <div class="item">
+                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremq laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, </p>
+                                        <h6>Vinay Kumar</h6>
+                                        <span>Mumbai</span>
+                                </div>
+                                <div class="item">
+                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremq laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, </p>
+                                        <h6>Vinay Kumar</h6>
+                                        <span>Mumbai</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="row gallery-section" id="gallery">
+                    <div class="container">
+                        <h2 class="text-center">Gallery</h2>
+                        <div class="row">
+                                <div class="col-md-12 col-sm-12 col-12 col-lg-6">
+                                    <div class="galleryrow">
+                                           <div class="row1 mb-2">
+                                                <a class="fancybox" rel="ligthbox" href="{% static 'images/gallery1.jpg' %}">
+                                                    <img src="{% static 'images/gallery1.jpg' %}" class="img-fluid" />
+                                                </a>
+                                            </div>
+                                            <div class="row2 d-flex">
+                                                <div class="col1">
+                                                    <a class="fancybox" rel="ligthbox" href="{% static 'images/gallery2.jpg' %}">
+                                                        <img src="{% static 'images/gallery2.jpg' %}" class="img-fluid" />
+                                                    </a>
+                                                </div>
+                                                <div class="col2">
+                                                    <a class="fancybox" rel="ligthbox" href="{% static 'images/gallery3.jpg' %}">
+                                                        <img src="{% static 'images/gallery3.jpg' %}" class="img-fluid" />
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-12 col-lg-6 ">
+                                    <div class="galleryrow">
+                                        <div class="row2 d-flex mb-2">
+                                            <div class="col1">
+                                                <a class="fancybox" rel="ligthbox" href="{% static 'images/gallery4.jpg' %}">
+                                                    <img src="{% static 'images/gallery4.jpg' %}" class="img-fluid" />
+                                                </a>
+                                            </div>
+                                            <div class="col2">
+                                                <a class="fancybox" rel="ligthbox" href="{% static 'images/gallery5.jpg' %}">
+                                                    <img src="{% static 'images/gallery5.jpg' %}" class="img-fluid" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                          <div class="row1">
+                                                <a class="fancybox" rel="ligthbox" href="{% static 'images/gallery6.png' %}">
+                                                    <img src="{% static 'images/gallery6.png' %}" class="img-fluid" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="clear"></div>
+
+                <div class="row press-release" id="press1">
+                    <div class="container">
+                        <h2 class="text-center title">Press Release</h2>
+                        <div class="row row-secs">
+                        <!-- <div id="big" class="owl-carousel owl-theme top-owl">
+                          <div class="item"> -->
+                          <div class="row press-row ">
+                          <div class="col-lg-6 col-md-12 col-sm-12 col-12 m-0 p-0 press-img">
+                              <img src="{% static 'images/press.jpg' %}" class="img-fluid" alt="">
+                          </div>
+                          <div class="col-lg-6 col-md-12 col-sm-12 col-12 m-0 p-0 press-wrapper">
+                              <div class="press-content">
+                                  <h6>Medical live news,<span>9 Jan, 2019,</span> </h6>
+                                  <h2>Thiruvananthapuram-based KIMS Hospital</h2>
+                                  <p>Thiruvananthapuram: In a first of its kind initiative in the state, Thiruvananthapuram-based KIMS Hospital has launched a centre to provide</p>
+                                  <a href="https://timesofindia.indiatimes.com/city/thiruvananthapuram/initiative-to-provide-free-prosthetic-limbs/articleshow/67461533.cms" target="_blank" class="read-more">Read More</a>
+                              </div>
+                          </div>
+                          <!-- </div>
+                          </div> -->
+                        </div>
+
+                        <!-- <div id="thumbs" class="owl-carousel owl-theme ">
+                          <div class="item">
+                              <div class="press-pointer">
+                              <h4>Times of india,9 Jan, 2016</h4>
+                              <p>Thiruvananthapuram: In a first of its kind initiative in the state, Thiruvananthapuram-based KIMS Hospital has launched a centre to provide</p>
+                              </div>
+                          </div>
+                        </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+
+                <div class="row difference" id="contact1">
+                    <div class="container">
+                        <div class="row">
+                            <div class="offset-md-4 offset-lg-4 col-lg-8 col-md-8 offset-row">
+                                <div class="row">
+                                    <div class="col-md-8 col-lg-8 col-12 btm-txt">
+                                        <h4>Make a difference by contributing to this noble cause</h4>
+                                    </div>
+                                    <div class="col-md-4 col-lg-4 col-12 align-self-center">
+                                        <a href="{% url 'registration:register' %}" class="d-btn">Donate Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        {% endblock %}

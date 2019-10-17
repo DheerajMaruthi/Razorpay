@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class="container-fluid thank-page">
+  <h1>Thank you for your donation.</h1>
+</div>
+{% endblock %}
+{% block extra_scripts %}
+  <script type="text/javascript">
+    window.setTimeout(function(){
+       window.location.href = "/";
+   }, 5000);
+  </script>
+{% endblock %}

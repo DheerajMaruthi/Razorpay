@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block menu_header%}
+  <div class="navbar-items" id="navbarResponsive">
+    <ul class="navbar-nav nav-wrapper">
+      <li class="nav-item active" id="">
+        <a class="nav-link" href="../#initiative" >KIMS CSR Initiative
+              <span class="sr-only">(current)</span>
+            </a>
+      </li>
+      <li class="nav-item" id="abt">
+        <a class="nav-link" href="../#about">About Jaipur Foot</a>
+      </li>
+      <!-- <li class="nav-item" id="test">
+        <a class="nav-link" href="../#testimonails">Testimonials</a>
+      </li> -->
+      <li class="nav-item" id="gal">
+        <a class="nav-link" href="../#gallery">Gallery</a>
+      </li>
+      <li class="nav-item" id="">
+        <a class="nav-link" href="../#press1">Press Release</a>
+      </li>
+      <li class="nav-item" id="">
+        <a class="nav-link" href="../#contact1">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+{% endblock %}
+
+{% block menu_header_responsive %}
+<div class="mob-list">
+    <ul class="navbar-nav nav-wrapper">
+      <li class="nav-item active">
+        <a class="nav-link"  href="../#initiative" id="ini">KIMS CSR Initiative
+              <span class="sr-only">(current)</span>
+            </a>
+      </li>
+      <li class="nav-item" id="abt">
+        <a class="nav-link"  href="../#about">About Jaipur Foot</a>
+      </li>
+      <!-- <li class="nav-item" id="test">
+        <a class="nav-link"  href="../#testimonails">Testimonials</a>
+      </li> -->
+      <li class="nav-item" id="gal">
+        <a class="nav-link"  href="../#gallery">Gallery</a>
+      </li>
+      <li class="nav-item" id="press">
+        <a class="nav-link"  href="../#press1">Press Release</a>
+      </li>
+      <li class="nav-item" id="contact">
+        <a class="nav-link"  href="../#contact1">Contact Us</a>
+      </li>
+      <li class="nav-item mt-btn1">
+          <a href="#" class="spread-btn">Spread the world</a>
+          <div class="soc-icons">
+              <a href="#"><i class="far fa-twitter"></i></a>
+              <a href="#"><i class="far fa-pinterest"></i></a>
+              <a href="#"><i class="far fa-facebook-f"></i></a>
+          </div>
+      </li>
+      <li class="nav-item mt-btn2">
+          <a href="{% url 'registration:register' %}" class="donate-btn" >Donate Now</a>
+      </li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid" style="height: 68vh;
+    padding-top: 200px;">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <h1>Coming Soon!!!</h1>
+            </div>
+        </div>
+</div>
+{% endblock %}

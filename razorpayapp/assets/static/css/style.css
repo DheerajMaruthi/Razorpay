@@ -1,0 +1,109 @@
+@charset "utf-8";
+@font-face {
+	font-family: "Font Awesome 5 Free";
+	src: url('/static/kimsecomm/fonts/font-awesome/fa-brands-400.woff') format('woff'),
+	url('/static/kimsecomm/fonts/font-awesome/fa-brands-400.woff2') format('woff2'),
+	url('/static/kimsecomm/fonts/font-awesome/fa-brands-400.ttf') format('truetype'),
+	url('/static/kimsecomm/fonts/font-awesome/fa-brands-400.svg#Font Awesome 5 Free') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Font Awesome 5 Free";
+	src: url('/static/kimsecomm/fonts/font-awesome/fa-solid-900.woff') format('woff'),
+	url('/static/kimsecomm/fonts/font-awesome/fa-solid-900.woff2') format('woff2'),
+	url('/static/kimsecomm/fonts/font-awesome/fa-solid-900.ttf') format('truetype'),
+	url('/static/kimsecomm/fonts/font-awesome/fa-solid-900.svg#Font Awesome 5 Free') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('/static/kimsecomm/fonts/Roboto-Bold/Roboto-Bold.eot');
+    src: url('/static/kimsecomm/fonts/Roboto-Bold/Roboto-Bold.woff') format('woff'),
+        url('/static/kimsecomm/fonts/Roboto-Bold/Roboto-Bold.ttf') format('truetype'),
+        url('/static/kimsecomm/fonts/Roboto-Bold/Roboto-Bold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('/static/kimsecomm/fonts/Roboto-Regular/Roboto-Regular-webfont.eot');
+    src: url('/static/kimsecomm/fonts/Roboto-Regular/Roboto-Regular-webfont.eot?#iefix')
+        format('embedded-opentype'),
+        url('/static/kimsecomm/fonts/Roboto-Regular/Roboto-Regular-webfont.woff') format('woff'),
+        url('/static/kimsecomm/fonts/Roboto-Regular/Roboto-Regular-webfont.ttf') format('truetype'),
+        url('/static/kimsecomm/fonts/Roboto-Regular/Roboto-Regular-webfont.svg#robotoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto-Condensed-Regular';
+    src: url('/static/kimsecomm/fonts/Roboto-Condensed/RobotoCondensed-Regular.eot');
+    src: url('/static/kimsecomm/fonts/Roboto-Condensed/RobotoCondensed-Regular.woff') format('woff'),
+        url('/static/kimsecomm/fonts/Roboto-Condensed/RobotoCondensed-Regular.ttf') format('truetype'),
+        url('/static/kimsecomm/fonts/Roboto-CondensedRobotoCondensed-Regular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto-Medium';
+    src: url('/static/kimsecomm/fonts/Roboto-Medium/Roboto-Medium.eot');
+    src: url('/static/kimsecomm/fonts/Roboto-Medium/Roboto-Medium.woff') format('woff'),
+        url('/static/kimsecomm/fonts/Roboto-Medium/Roboto-Medium.ttf') format('truetype'),
+        url('/static/kimsecomm/fonts/Roboto-Medium/Roboto-Medium.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto-Thin';
+    src: url('/static/kimsecomm/fonts/Roboto-Thin/Roboto-Thin.eot');
+    src: url('/static/kimsecomm/fonts/Roboto-Thin/Roboto-Thin.woff') format('woff'),
+        url('/static/kimsecomm/fonts/Roboto-Thin/Roboto-Thin.ttf') format('truetype'),
+        url('/static/kimsecomm/fonts/Roboto-Thin/Roboto-Thin.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto-Thin-italic';
+    src: url('/static/kimsecomm/fonts/Roboto-Thin-italic/Roboto-ThinItalic-webfont.eot');
+    src: url('/static/kimsecomm/fonts/Roboto-Thin-italic/Roboto-ThinItalic-webfont.eot?#iefix')
+        format('embedded-opentype'),
+        url('/static/kimsecomm/fonts/Roboto-Thin-italic/Roboto-ThinItalic-webfont.woff') format('woff'),
+        url('/static/kimsecomm/fonts/Roboto-Thin-italic/Roboto-ThinItalic-webfont.ttf') format('truetype'),
+        url('/static/kimsecomm/fonts/Roboto-Thin-italic/Roboto-ThinItalic-webfont.svg#robotothin_italic')
+        format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url('/static/kimsecomm/fonts/Roboto-Light/Roboto-Light.eot');
+    src: url('/static/kimsecomm/fonts/Roboto-Light/Roboto-Light.woff') format('woff'),
+        url('/static/kimsecomm/fonts/Roboto-Light/Roboto-Light.ttf') format('truetype'),
+        url('/static/kimsecomm/fonts/Roboto-Light/Roboto-Light.svg') format('svg');
+}
+
+body, h1, h2, h3, h4, h5, html {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+body {
+  position: relative;
+}
+h1{
+}
+.absolute {
+    position: absolute;
+}
+.relative {
+    position: relative;
+}
+
+// header starts here
+.carousel-inner {
+    height: 100vh;
+}
+
+@import "responsive.less";

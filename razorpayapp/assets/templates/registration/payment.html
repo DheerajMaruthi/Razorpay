@@ -1,0 +1,46 @@
+{% extends 'base.html'%}
+{% load widget_tweaks %}
+{% block content %}
+<div class="container-fluid thank-page ">
+  <h1 class="wait-message">Don't Close the Page Payment Process in progress.</h1>
+</div>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+    var options = {
+        "key": "{{ rz_key }}",
+        "amount": "{{ amount }}",
+        "buttontext": "Pay with Razorpay",
+        "name": "{{name}}",
+        "description": "{{description}}",
+        "image": "{{logo_url}}",
+        "theme.color": "{{theme_color}}",
+        "handler": function (response){
+            console.log('ok');
+            $('.wait-message').text("Please wait Don't close the page");
+            // $('.wait-message').addClass('wait-message-show');
+            var url = "{% url 'registration:payment-success' rg_id=reg_id %}";
+            var params = {
+                'razorpay_id': response.razorpay_payment_id,
+                'transaction_id': "{{ txn_id }}"
+            };
+            window.location = url + "?" + $.param(params);
+        },
+        "prefill": {
+            "email": "{{ email }}",
+            "contact": "{{ phone }}"
+        },
+        "modal": {
+            "ondismiss": function(){
+                var url = "{% url 'registration:payment-cancel' rg_id=reg_id tnx_id=txn_id %}";
+                window.location = url;
+            }
+        },
+        "notes": {
+            "txn_id": "{{ txn_id }}",
+        }
+    };
+    var rzp = new Razorpay(options);
+    rzp.open();
+</script>
+
+{% endblock %}
